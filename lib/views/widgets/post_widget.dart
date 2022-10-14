@@ -3,7 +3,8 @@ import '/models/post_model.dart';
 
 class PostWidget extends StatelessWidget {
   PostModel postModel;
-  PostWidget(this.postModel);
+  Function? function;
+  PostWidget(this.postModel, [this.function]);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -42,11 +43,15 @@ class PostWidget extends StatelessWidget {
           margin: EdgeInsets.all(10),
           child: Row(
             children: [
-              Icon(
-                Icons.favorite,
-                size: 30,
-                color: postModel.isFavourite ? Colors.red : Colors.grey,
-              ),
+              IconButton(
+                  onPressed: () {
+                    function!(postModel);
+                  },
+                  icon: Icon(
+                    Icons.favorite,
+                    size: 30,
+                    color: postModel.isFavourite ? Colors.red : Colors.grey,
+                  )),
               SizedBox(
                 width: 10,
               ),
