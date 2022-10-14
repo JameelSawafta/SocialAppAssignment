@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'views/homeView.dart';
+import 'package:test9/views/screens/main_socialapp_screen.dart';
 
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: '',
-      home: Home(),
+      home: MainSocialAppScreen(),
     );
   }
 }
